@@ -1,7 +1,7 @@
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
-local Limit = 5
+local Limit = 10
 local Player = Players.LocalPlayer
 
 local last = 0;
@@ -69,7 +69,7 @@ RunService.RenderStepped:Connect(function()
 			
 			local rootJoint = humanoidRootPart:FindFirstChild("RootJoint")
 	
-			if (humanoidRootPart.Rotation.Y == -(last) or  (humanoidRootPart.Rotation.Y > (-(last))-10)  and humanoidRootPart.Rotation.Y < (-(last))+10)  and last ~= 0 and  (humanoidRootPart.Rotation.Y > 10 or humanoidRootPart.Rotation.Y < -10)   then
+			if (humanoidRootPart.Rotation.Y == -(last) or  (humanoidRootPart.Rotation.Y > (-(last))-Limit)  and humanoidRootPart.Rotation.Y < (-(last))+Limit)  and last ~= 0 and  (humanoidRootPart.Rotation.Y > Limit or humanoidRootPart.Rotation.Y < -Limit)   then
 				last = humanoidRootPart.Rotation.Y
 				warn("_Inverse_ "..last)
 				
